@@ -118,7 +118,7 @@ const InvoiceForm = () => {
   return (
     <Container maxWidth="md">
       <Box sx={{ marginTop: 3, marginBottom: 3 }}>
-        <Paper elevation={10} sx={{ padding: 3 }}>
+        <Paper elevation={20} sx={{ padding: 3 }}>
           {/* Header */}
           <Typography
             variant="h4"
@@ -170,6 +170,7 @@ const InvoiceForm = () => {
               <TextField
                 label="Who is this invoice to?"
                 fullWidth
+                name="buyer"
                 margin="normal"
                 value={buyer.name}
                 onChange={(e) => setBuyer({ ...buyer, name: e.target.value })}
@@ -178,6 +179,7 @@ const InvoiceForm = () => {
                 label="Phone Number"
                 fullWidth
                 margin="normal"
+                name="buyerPhone"
                 // Prepend the country code to the phone number
                 value={buyer.phone ? `+91 ${buyer.phone}` : ""} // Conditional to avoid undefined
                 onChange={handleBuyerPhoneChange} // Use the validation handler
@@ -190,6 +192,7 @@ const InvoiceForm = () => {
                 label="Billing address"
                 fullWidth
                 margin="normal"
+                name="buyerAddress"
                 value={buyer.address}
                 onChange={(e) =>
                   setBuyer({ ...buyer, address: e.target.value })
@@ -205,6 +208,7 @@ const InvoiceForm = () => {
               <TextField
                 label="Who is this invoice from?"
                 fullWidth
+                name="seller"
                 margin="normal"
                 value={seller.name}
                 onChange={(e) => setSeller({ ...seller, name: e.target.value })}
@@ -213,6 +217,7 @@ const InvoiceForm = () => {
                 label="Phone Number"
                 fullWidth
                 margin="normal"
+                name="seller phone"
                 // Prepend the country code to the phone number
                 value={seller.phone ? `+91 ${seller.phone}` : ""} // Conditional to avoid undefined
                 onChange={handleSellerPhoneChange} // Use the validation handler
@@ -225,6 +230,7 @@ const InvoiceForm = () => {
                 label="Billing address"
                 fullWidth
                 margin="normal"
+                name="sellerAddress"
                 value={seller.address}
                 onChange={(e) =>
                   setSeller({ ...seller, address: e.target.value })
